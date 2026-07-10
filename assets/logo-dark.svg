@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120">
+  <!-- Real wordmark (dark-background version) — use anywhere the logo sits on
+       Slate Ink / Slate Ink Raised (e.g. footer, dark section headers). -->
+  <text x="50%" y="63.5" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="700" font-size="40">
+    <tspan fill="#f5f6f7">The</tspan><tspan fill="#7fa3c0">Design</tspan><tspan fill="#f5f6f7">Bench</tspan>
+  </text>
+  <rect x="155" y="77.5" width="90" height="3" fill="#7fa3c0"></rect>
+</svg>

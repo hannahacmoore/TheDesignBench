@@ -1,0 +1,558 @@
+/* ==========================================================================
+   The Design Bench — stylesheet
+   Mobile-first. Breakpoints widen the layout as space allows.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand tokens ---- */
+  --slate-ink: #20242A;         /* primary dark / text */
+  --slate-ink-raised: #2B3038;  /* dark surface elevation */
+  --bench-blue: #5B7C99;        /* accent on light backgrounds */
+  --bench-blue-light: #7FA3C0;  /* accent on dark backgrounds */
+  --paper: #F8F9FA;             /* primary light background */
+  --paper-warm: #E7E9EB;        /* deeper off-white — section tint + text on dark */
+
+  /* ---- Type ---- */
+  --font-heading: 'Manrope', 'Segoe UI', Arial, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', Arial, sans-serif;
+
+  /* ---- Layout ---- */
+  --wrap-max: 1120px;
+  --gutter: 1.25rem;
+  --radius: 10px;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--slate-ink);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.15;
+  margin: 0 0 0.6em;
+  color: var(--slate-ink);
+}
+
+h1 { font-size: clamp(2rem, 5vw + 1rem, 3.25rem); }
+h2 { font-size: clamp(1.5rem, 3vw + 1rem, 2.25rem); }
+h3 { font-size: 1.15rem; margin-bottom: 0.4em; }
+
+p { margin: 0 0 1em; }
+
+.wrap {
+  max-width: var(--wrap-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
+
+.eyebrow {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: var(--bench-blue);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.section-lede {
+  max-width: 60ch;
+  color: var(--slate-ink);
+  opacity: 0.8;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--slate-ink);
+  color: var(--paper-warm);
+}
+
+.btn-primary:hover {
+  background: var(--bench-blue);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Header / Nav
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #FFFFFF;
+  border-bottom: 1px solid rgba(32, 36, 42, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+
+.brand { display: inline-flex; align-items: center; text-decoration: none; }
+.brand-logo { height: 38px; width: auto; }
+
+@media (min-width: 720px) {
+  .brand-logo { height: 46px; }
+}
+
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  background: var(--slate-ink);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.site-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-bottom: 1px solid rgba(32, 36, 42, 0.08);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+
+.site-nav.is-open { max-height: 260px; }
+
+.site-nav a {
+  padding: 0.9rem var(--gutter);
+  text-decoration: none;
+  font-weight: 500;
+  border-top: 1px solid rgba(32, 36, 42, 0.06);
+}
+
+.site-nav a:hover { color: var(--bench-blue); }
+
+@media (min-width: 720px) {
+  .nav-toggle { display: none; }
+
+  .site-nav {
+    position: static;
+    flex-direction: row;
+    gap: 2rem;
+    max-height: none;
+    overflow: visible;
+    background: none;
+    border: none;
+  }
+
+  .site-nav a {
+    padding: 0;
+    border: none;
+  }
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  padding-top: clamp(3.5rem, 8vw, 6rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.hero-lede {
+  max-width: 62ch;
+  font-size: clamp(1rem, 1.5vw + 0.5rem, 1.2rem);
+  color: var(--slate-ink);
+  opacity: 0.85;
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   Projects
+   ========================================================================== */
+
+.projects {
+  background: var(--paper-warm);
+}
+
+.project-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 980px) {
+  .project-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.project-card {
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgba(32, 36, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(32, 36, 42, 0.12);
+}
+
+.project-image {
+  aspect-ratio: 4 / 3;
+  background: var(--slate-ink-raised);
+  overflow: hidden;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-body {
+  padding: 1.25rem 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-desc {
+  opacity: 0.85;
+  font-size: 0.95rem;
+  flex-grow: 1;
+}
+
+.project-link {
+  align-self: flex-start;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--bench-blue);
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.project-link:hover { text-decoration: underline; }
+
+/* ---- "Project family" tag — for multi-listing projects that link out to
+   a dedicated page (see projects/light-switch-family.html) instead of
+   opening the platform picker directly. ---- */
+.family-tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--bench-blue);
+  background: rgba(91, 124, 153, 0.12);
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.65rem;
+}
+
+/* ---- "View Design" platform picker ---- */
+.view-design {
+  position: relative;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.view-design-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.platform-menu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  min-width: 170px;
+  background: var(--paper);
+  border: 1px solid rgba(32, 36, 42, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(32, 36, 42, 0.16);
+  padding: 0.35rem;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 10;
+}
+
+.platform-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.platform-menu li a {
+  display: block;
+  padding: 0.55rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--slate-ink);
+}
+
+.platform-menu li a:hover {
+  background: var(--paper-warm);
+  color: var(--bench-blue);
+}
+
+/* ---- "See the Full Portfolio" CTA banner (spans the full grid width) ---- */
+.project-card--cta {
+  grid-column: 1 / -1;
+  background: var(--slate-ink);
+  color: var(--paper-warm);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+  padding: 1.85rem 2rem;
+}
+
+.project-card--cta .project-cta-text h3 {
+  color: var(--paper-warm);
+  margin-bottom: 0.35rem;
+}
+
+.project-card--cta .project-cta-text .project-desc {
+  opacity: 0.8;
+  margin: 0;
+  max-width: 55ch;
+}
+
+.btn-cta {
+  background: var(--bench-blue-light);
+  color: var(--slate-ink);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-cta:hover {
+  background: var(--paper-warm);
+}
+
+@media (min-width: 720px) {
+  .project-card--cta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
+
+/* ==========================================================================
+   About
+   ========================================================================== */
+
+.about p {
+  max-width: 68ch;
+}
+
+/* ==========================================================================
+   Contact
+   ========================================================================== */
+
+.contact {
+  background: var(--slate-ink);
+  color: var(--paper-warm);
+}
+
+.contact h2 { color: var(--paper-warm); }
+
+.contact .section-lede {
+  color: var(--paper-warm);
+  opacity: 0.75;
+}
+
+.contact .btn-primary {
+  background: var(--bench-blue-light);
+  color: var(--slate-ink);
+  margin-top: 0.5rem;
+}
+
+.contact .btn-primary:hover {
+  background: var(--paper-warm);
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(245, 246, 247, 0.15);
+}
+
+.social-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--paper-warm);
+  opacity: 0.85;
+}
+
+.social-links a:hover {
+  color: var(--bench-blue-light);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  background: var(--slate-ink-raised);
+  color: var(--paper-warm);
+  padding: 1.75rem 0;
+  font-size: 0.85rem;
+}
+
+.site-footer p {
+  margin: 0;
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   Portfolio page — Netflix-style horizontally scrolling category rows
+   ========================================================================== */
+
+.portfolio-hero {
+  padding-top: clamp(3rem, 6vw, 4.5rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2rem);
+}
+
+.portfolio-hero p {
+  max-width: 60ch;
+  opacity: 0.8;
+}
+
+.portfolio-row {
+  padding: 1rem 0;
+}
+
+.portfolio-row:nth-child(even) {
+  background: var(--paper-warm);
+}
+
+.portfolio-row h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.85rem;
+}
+
+/* The scroll container itself carries the .wrap sizing (max-width + gutter
+   padding) so the row's left edge always lines up with the heading above
+   it, and so it always overflows consistently (guaranteeing the "scroll
+   over" affordance) rather than only overflowing on narrow screens. */
+.row-scroll {
+  max-width: var(--wrap-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 0.6rem;
+  overflow-x: auto;
+  /* Explicit, because leaving overflow-y unset lets browsers silently force
+     it to "auto" too (the two axes aren't independent unless both are set)
+     — any hairline sub-pixel overflow (hover lift, shadow bleed) was enough
+     to trigger an unwanted vertical scrollbar on the row itself. */
+  overflow-y: hidden;
+  scroll-behavior: auto;
+  /* "none" (not just "contain") also disables the native elastic bounce
+     past the start/end of the row on trackpads and touch — scrollLeft 0
+     is a hard stop, not a rubber-band edge. */
+  overscroll-behavior-x: none;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.2s ease;
+}
+
+.row-scroll:hover,
+.row-scroll:focus-within {
+  scrollbar-color: var(--bench-blue) transparent;
+}
+
+.row-scroll::-webkit-scrollbar { height: 6px; }
+.row-scroll::-webkit-scrollbar-track { background: transparent; }
+.row-scroll::-webkit-scrollbar-thumb { background: transparent; border-radius: 999px; }
+
+.row-scroll:hover::-webkit-scrollbar-thumb,
+.row-scroll:focus-within::-webkit-scrollbar-thumb {
+  background: var(--bench-blue);
+}
+
+.row-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+}
+
+.row-track .project-card {
+  flex: 0 0 260px;
+  width: 260px;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 640px) {
+  .row-track .project-card { flex-basis: 290px; width: 290px; }
+}

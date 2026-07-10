@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Portfolio — The Design Bench</title>
+  <meta name="description" content="Every Design Bench project, organized by category — functional parts, laser cuts, fun designs, and organization.">
+
+  <!-- Keep this <head> in sync with index.html (favicon + font links) -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================== HEADER =========================== -->
+  <!-- Same header as index.html, but nav links point back to index.html's
+       anchor sections since this is a separate page. Keep both headers
+       in sync if you change nav items. -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="brand" aria-label="The Design Bench — home">
+        <img src="assets/logo.svg" alt="The Design Bench" class="brand-logo" width="400" height="120">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#projects">Featured</a>
+        <a href="portfolio.html" aria-current="page">Portfolio</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="portfolio-hero">
+      <div class="wrap">
+        <p class="eyebrow">The Design Bench</p>
+        <h1>Full Portfolio</h1>
+        <p>Every project on the bench, sorted by category. Scroll each row to browse, new designs get added to their category as they're posted.</p>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         CATEGORY ROW — REPEATABLE COMPONENT
+         ================================================================
+         To add a new category, copy one entire <section class="portfolio-row">
+         block (from <section> to its closing </section>) and paste it as a
+         new sibling below, then:
+           1. change the <h2> category name
+           2. replace the cards inside .row-track with that category's projects
+
+         Each card inside a row is the SAME project-card component used on
+         the homepage (image, title, 2-3 sentence description, "View Design"
+         platform picker) — copy one <article class="project-card"> block to
+         add another project to a category. See index.html for the full
+         breakdown of what to swap inside a card.
+
+         MULTI-LISTING "PROJECT FAMILY" CARDS
+         For a project that's really a family of many files/posts (see the
+         "Light Switch Plate Family" card below), skip the platform picker
+         and use a family-tag + a plain "More Info" link to a dedicated page
+         under /projects/ instead — copy projects/light-switch-family.html
+         for the pattern.
+         ================================================================ -->
+
+    <!-- CATEGORY: Functional Parts -->
+    <section class="portfolio-row">
+      <div class="wrap">
+        <h2>Functional Parts</h2>
+      </div>
+      <div class="row-scroll">
+        <div class="row-track">
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-1.svg" alt="Placeholder render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Adjustable Phone Stand</h3>
+              <p class="project-desc">Placeholder description — a print-in-place phone stand with a ratcheting hinge for adjustable viewing angles.</p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Printables</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">MakerWorld</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-2.svg" alt="Placeholder render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Cable Management Clip Set</h3>
+              <p class="project-desc">Placeholder description — a modular set of snap-fit cable clips sized for USB-C, HDMI, and power cables.</p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Printables</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">MakerWorld</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-3.svg" alt="Placeholder render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Snap-Fit Wall Bracket</h3>
+              <p class="project-desc">Placeholder description — a keyhole-mount wall bracket for lightweight lab equipment, printed without supports.</p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Printables</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- FAMILY CARD (placeholder content) — links out to a dedicated
+               page instead of opening the platform picker, since this
+               "project" is really 6 posts / 20-30 files. -->
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-1.svg" alt="Placeholder render — light switch plate family" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <span class="family-tag">Project Family · 6 listings</span>
+              <h3>[Placeholder] Light Switch Plate Family</h3>
+              <p class="project-desc">Placeholder description — a matching family of toggle, rocker, and decora switch plate covers across single and double gang sizes.</p>
+              <a href="projects/light-switch-family.html" class="project-link">More Info →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Laser Cut Projects -->
+    <section class="portfolio-row">
+      <div class="wrap">
+        <h2>Laser Cut Projects</h2>
+      </div>
+      <div class="row-scroll">
+        <div class="row-track">
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-3.svg" alt="Placeholder render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Laser-Cut Desk Organizer</h3>
+              <p class="project-desc">Placeholder description — a slot-together plywood organizer for lab tools, cut on a 3mm birch ply sheet.</p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Printables</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-2.svg" alt="Placeholder render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Acrylic Display Stand</h3>
+              <p class="project-desc">Placeholder description — a slot-together acrylic stand for displaying small printed parts and prototypes.</p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-1.svg" alt="Placeholder render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Cable Routing Panel</h3>
+              <p class="project-desc">Placeholder description — a slotted plywood panel for routing and labeling bench cabling.</p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Printables</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-2.svg" alt="Placeholder render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Nesting Sample Boxes</h3>
+              <p class="project-desc">Placeholder description — a set of nesting laser-cut boxes sized for lab sample storage.</p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Printables</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">MakerWorld</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Fun Designs -->
+    <section class="portfolio-row">
+      <div class="wrap">
+        <h2>Fun Designs</h2>
+      </div>
+      <div class="row-scroll">
+        <div class="row-track">
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-1.svg" alt="Placeholder render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Desk Fidget Gear Set</h3>
+              <p class="project-desc">Placeholder description — a set of interlocking desk gears that spin freely once printed, no assembly required.</p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Printables</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">MakerWorld</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-2.svg" alt="Placeholder render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Articulated Toy Figure</h3>
+              <p class="project-desc">Placeholder description — a print-in-place articulated figure with moving joints and no supports.</p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">MakerWorld</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-3.svg" alt="Placeholder render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Custom Dice Tower</h3>
+              <p class="project-desc">Placeholder description — a tabletop dice tower with a baffle interior for board game nights.</p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Printables</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-1.svg" alt="Placeholder render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Phone Game Controller Clip</h3>
+              <p class="project-desc">Placeholder description — a clip-on controller mount that turns a phone into a handheld gaming rig.</p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Printables</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">MakerWorld</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: Organization -->
+    <section class="portfolio-row">
+      <div class="wrap">
+        <h2>Organization</h2>
+      </div>
+      <div class="row-scroll">
+        <div class="row-track">
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-2.svg" alt="Placeholder render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Modular Bin Dividers</h3>
+              <p class="project-desc">Placeholder description — snap-together dividers that turn any drawer into custom-sized bins.</p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Printables</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-3.svg" alt="Placeholder render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Wall-Mounted Tool Rack</h3>
+              <p class="project-desc">Placeholder description — a slatted wall rack for hand tools, sized for a standard pegboard.</p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">MakerWorld</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-1.svg" alt="Placeholder render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Deskside File Sorter</h3>
+              <p class="project-desc">Placeholder description — a stackable sorter for loose papers and folders, sized for a standard desk.</p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Printables</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">MakerWorld</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-2.svg" alt="Placeholder render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Modular Parts Tray</h3>
+              <p class="project-desc">Placeholder description — a stackable, sectioned tray for small hardware, sized to fit standard desk drawers.</p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Printables</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> The Design Bench. All designs shared here remain the author's own work.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

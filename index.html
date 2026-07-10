@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Design Bench — CAD, 3D Printing &amp; Maker Projects</title>
+  <meta name="description" content="The Design Bench is a maker portfolio showcasing functional parts, prototypes, and design projects across CAD, 3D printing, and laser cutting.">
+
+  <!-- ============================================================
+       FAVICON
+       assets/favicon.svg is a vector recreation of the real TDB mark.
+       If you export an official favicon.ico from the source file, drop
+       it in /assets — the link below already points to it as a fallback
+       for browsers that don't support SVG favicons.
+       ============================================================ -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+  <!-- Fonts: Manrope for headings (matches the logo wordmark), Inter for body copy -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================== HEADER =========================== -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#home" class="brand" aria-label="The Design Bench — home">
+        <!-- ================================================================
+             LOGO
+             Placeholder wordmark lives at assets/logo.svg — drop the real
+             logo file in /assets and it will appear here automatically
+             (keep the filename, or update this src).
+             ================================================================ -->
+        <img src="assets/logo.svg" alt="The Design Bench" class="brand-logo" width="400" height="120">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =========================== HERO / HOME =========================== -->
+    <section id="home" class="hero">
+      <div class="wrap">
+        <p class="eyebrow">The Design Bench</p>
+        <h1>Biomedical engineering student &amp; maker.</h1>
+        <p class="hero-lede">
+          The Design Bench showcases functional parts, prototypes, and maker projects
+          across CAD, 3D printing, and laser cutting. New designs added regularly. :)
+        </p>
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+      </div>
+    </section>
+
+    <!-- =========================== FEATURED PROJECTS =========================== -->
+    <section id="projects" class="projects">
+      <div class="wrap">
+        <h2>Featured Projects</h2>
+        <p class="section-lede">A running collection of designs, from quick functional prints to more involved builds.</p>
+
+        <div class="project-grid">
+
+          <!-- ================================================================
+               PROJECT CARD — REPEATABLE COMPONENT
+               ================================================================
+               To add a new project, copy one entire <article class="project-card">
+               block (from the opening <article> tag to its closing </article>,
+               NOT the CTA card at the end) and paste it as a new sibling inside
+               .project-grid, then swap:
+                 1. the <img src> + alt text            -> real project photo/render
+                 2. the <h3> title
+                 3. the <p class="project-desc"> copy   -> 2-3 sentences
+                 4. the platform links inside .platform-menu -> real listing URLs
+
+               "VIEW DESIGN" PLATFORM PICKER
+               Each card's "View Design →" is a button that opens a small menu
+               of platforms (Cults3D / Printables / MakerWorld / Thangs) since
+               a project may be posted on more than one. Delete any <li> for a
+               platform this project isn't on. If a project only lives on ONE
+               platform, skip the menu entirely and just use:
+                 <a href="REAL_URL" class="project-link" target="_blank" rel="noopener">View Design →</a>
+
+               MULTI-LISTING "PROJECT FAMILY" CARDS
+               If a project is really a family of many files/listings (e.g.
+               20-30 files across 6 posts), don't cram them into one platform
+               menu — instead give the card a family-tag + a plain "More Info"
+               link to a dedicated page under /projects/ listing every item.
+               See projects/light-switch-family.html for the full pattern,
+               and its "TEMPLATE — DUPLICATE FOR A NEW FAMILY" comment for how
+               to add a second one.
+               ================================================================ -->
+
+          <!-- PROJECT CARD 1 (placeholder content) -->
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-1.svg" alt="Placeholder render for Project One" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Adjustable Phone Stand</h3>
+              <p class="project-desc">
+                Placeholder description — a print-in-place phone stand with a ratcheting hinge
+                for adjustable viewing angles. Designed in Fusion 360 and tuned for PLA with
+                no supports needed.
+              </p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <!-- Replace each href="#" with the real listing URL once posted -->
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Printables</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">MakerWorld</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT CARD 2 (placeholder content) -->
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-2.svg" alt="Placeholder render for Project Two" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Cable Management Clip Set</h3>
+              <p class="project-desc">
+                Placeholder description — a modular set of snap-fit cable clips for desk setups,
+                sized for USB-C, HDMI, and power cables. Modeled parametrically in SolidWorks
+                so sizes can be scaled per cable.
+              </p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Printables</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">MakerWorld</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT CARD 3 (placeholder content) -->
+          <article class="project-card">
+            <div class="project-image">
+              <img src="assets/images/project-placeholder-3.svg" alt="Placeholder render for Project Three" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <h3>[Placeholder] Laser-Cut Desk Organizer</h3>
+              <p class="project-desc">
+                Placeholder description — a slot-together plywood organizer for lab tools and
+                small parts, laid out in Onshape and cut on a 3mm birch ply sheet. No glue
+                or fasteners required.
+              </p>
+              <div class="view-design">
+                <button type="button" class="project-link view-design-btn" aria-haspopup="true" aria-expanded="false">View Design →</button>
+                <ul class="platform-menu">
+                  <li><a href="#" target="_blank" rel="noopener">Cults3D</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Printables</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">MakerWorld</a></li>
+                  <li><a href="#" target="_blank" rel="noopener">Thangs</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================================================================
+               "VIEW FULL PORTFOLIO" CTA BANNER — not a project, spans the
+               full grid width and links to portfolio.html. Keep this as the
+               LAST item in the grid; if you reorder or add projects above,
+               leave this one at the end.
+               ================================================================ -->
+          <article class="project-card project-card--cta">
+            <div class="project-cta-text">
+              <h3>See the Full Portfolio</h3>
+              <p class="project-desc">
+                Every project, sorted into categories: functional parts, laser cuts,
+                fun designs, and organization. Browse the whole bench.
+              </p>
+            </div>
+            <a href="portfolio.html" class="btn btn-cta">Browse All Designs →</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== ABOUT =========================== -->
+    <section id="about" class="about">
+      <div class="wrap">
+        <h2>About</h2>
+        <p>
+          I'm a biomedical engineering student who loves to design in my free time. The Design Bench is where I share the parts, prototypes, and
+          side projects that come out of these designs. I share designs I created to solve
+          real problems, then model, print, or cut so someone else can use them too.
+        </p>
+        <p>
+          Most work here moves through <strong>SolidWorks</strong>, <strong>Fusion 360</strong>,
+          or <strong>Onshape</strong> depending on the project, and ends up produced by
+          3D printing (FDM) or laser cutting. Expect functional hardware, fixtures,
+          organizers, and the occasional fun little build, designed to not only work well but look good too.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================== CONTACT =========================== -->
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p class="section-lede">If you have questions, collab ideas, or a design you'd like adapted, please reach out.</p>
+
+        <!-- Replace with the real contact email -->
+        <a href="mailto:hello@thedesignbench.ca" class="btn btn-primary">hello@thedesignbench.ca</a>
+
+        <!-- Profile / storefront links — update here if a handle or platform changes -->
+        <ul class="social-links">
+          <li><a href="https://cults3d.com/en/users/TheDesignBench/downloads" target="_blank" rel="noopener">Cults3D</a></li>
+          <li><a href="https://www.printables.com/@DesignBench_2719450" target="_blank" rel="noopener">Printables</a></li>
+          <li><a href="https://makerworld.com/en/@TheDesignBench" target="_blank" rel="noopener">MakerWorld</a></li>
+          <li><a href="https://thangs.com/designer/TheDesignBench" target="_blank" rel="noopener">Thangs</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> The Design Bench. All designs shared here remain the author's own work.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

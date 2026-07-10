@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PLACEHOLDER PROJECT IMAGE — swap for a real render/photo, keep a 4:3 ratio for consistent card layout. -->
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#2B3038"/>
+  <path d="M0 600L800 0" stroke="#5B7C99" stroke-width="2" opacity="0.5"/>
+  <path d="M0 0L800 600" stroke="#5B7C99" stroke-width="2" opacity="0.5"/>
+  <rect x="300" y="260" width="200" height="80" rx="6" fill="none" stroke="#7FA3C0" stroke-width="2"/>
+  <text x="400" y="440" text-anchor="middle" font-family="'Space Grotesk', Arial, sans-serif" font-size="26" fill="#F5F6F7">PLACEHOLDER IMAGE</text>
+  <text x="400" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#7FA3C0">Project 01</text>
+</svg>

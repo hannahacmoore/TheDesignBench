@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Vector recreation of the real "TDB" icon (rounded square, diagonal
+  navy/blue split, bold wordmark-matching monogram). Built to match the
+  supplied artwork exactly in color and layout — if you have the original
+  exported file, drop it in as assets/favicon.svg (and export a
+  favicon.ico from it) to replace this.
+-->
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="tdb-rounded">
+      <rect width="64" height="64" rx="12"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#tdb-rounded)">
+    <rect width="64" height="64" fill="#20242A"/>
+    <polygon points="64,0 64,64 0,64" fill="#5B7C99"/>
+  </g>
+  <text x="32" y="40" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-weight="700" font-size="21" fill="#F5F6F7">TDB</text>
+</svg>
