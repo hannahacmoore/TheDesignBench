@@ -499,6 +499,24 @@ section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
   opacity: 0.8;
 }
 
+/* ---- Hero split — description next to the print spec box, side by side
+   on wider screens, stacked on mobile. ---- */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+@media (min-width: 720px) {
+  .hero-split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.hero-split p { margin: 0; }
+
 /* ---- Print/design spec box — for family pages that pull print settings
    out of the description into their own reference block. ---- */
 .spec-box {
@@ -506,8 +524,12 @@ section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
   border: 1px solid rgba(32, 36, 42, 0.1);
   border-radius: var(--radius);
   padding: 1.25rem 1.5rem;
-  margin-top: 1.5rem;
   max-width: 46rem;
+}
+
+.hero-split .spec-box {
+  margin: 0;
+  max-width: none;
 }
 
 .spec-box h2 {
