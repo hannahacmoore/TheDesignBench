@@ -100,6 +100,17 @@ section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
   transform: translateY(-1px);
 }
 
+/* ---- Disabled state — for CTAs that aren't live yet (e.g. email). ---- */
+.btn-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn-disabled:hover {
+  transform: none;
+}
+
 /* ==========================================================================
    Header / Nav
    ========================================================================== */
