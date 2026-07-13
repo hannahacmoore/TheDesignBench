@@ -499,6 +499,46 @@ section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
   opacity: 0.8;
 }
 
+/* ---- Print/design spec box — for family pages that pull print settings
+   out of the description into their own reference block. ---- */
+.spec-box {
+  background: var(--paper);
+  border: 1px solid rgba(32, 36, 42, 0.1);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+  max-width: 46rem;
+}
+
+.spec-box h2 {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--bench-blue);
+  margin: 0 0 0.85rem;
+}
+
+.spec-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1.5rem;
+  row-gap: 0.5rem;
+  margin: 0;
+}
+
+.spec-list dt {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.spec-list dd {
+  margin: 0;
+  opacity: 0.8;
+}
+
 .portfolio-row {
   padding: 1rem 0;
 }
