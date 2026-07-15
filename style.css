@@ -438,10 +438,16 @@ section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
   opacity: 0.75;
 }
 
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
 .contact .btn-primary {
   background: var(--bench-blue-light);
   color: var(--slate-ink);
-  margin-top: 0.5rem;
 }
 
 .contact .btn-primary:hover {
