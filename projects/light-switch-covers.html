@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Light Switch Covers — The Design Bench</title>
+  <meta name="description" content="Every switch cover size in one place, single, double, and triple gang plates, each with Decora, blank, and mixed cutout options.">
+
+  <!-- Keep this <head> in sync with /index.html (favicon + font links).
+       Paths are one folder deeper here, so everything is prefixed with ../ -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <!-- =========================== HEADER =========================== -->
+  <!-- Same header as index.html/portfolio.html, but every link is prefixed
+       with ../ since this page lives one folder deeper (/projects/). -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="../index.html" class="brand" aria-label="The Design Bench — home">
+        <img src="../assets/logo.svg" alt="The Design Bench" class="brand-logo" width="400" height="120">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#projects">Featured</a>
+        <a href="../portfolio.html">Portfolio</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- This page only exists as the destination for the "Light Switch Covers"
+         card on the homepage's Featured Projects — it's a collection of the 3
+         gang-size families, each of which is ALSO reachable on its own from
+         the Portfolio page's Functional Parts row. -->
+    <section class="portfolio-hero">
+      <div class="wrap">
+        <p class="eyebrow"><a href="../index.html#projects" style="color:inherit;text-decoration:none;">← Back to Featured Projects</a></p>
+        <h1>Light Switch Covers</h1>
+        <p>
+          Every switch cover size in one place, single, double, and triple gang plates, each
+          with Decora, blank, and mixed cutout options in standard and oversized sizes. Pick a
+          size below to see every style and grab the listing links.
+        </p>
+      </div>
+    </section>
+
+    <section class="projects" style="padding-top: 1rem;">
+      <div class="wrap">
+        <div class="project-grid">
+
+          <!-- COLLECTION ITEM 1 -->
+          <article class="project-card">
+            <div class="project-image">
+              <img src="../assets/images/single-gang-decora-cover.jpg" alt="Single Gang Light Switch Cover, Decora/rocker cutout render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <span class="family-tag">Project Family · 2 Styles</span>
+              <h3>Single Gang Light Switch Cover</h3>
+              <p class="project-desc">A single-gang switch cover plate available with a Decora/rocker cutout or as a blank cover, each in standard and oversized sizes.</p>
+              <a href="single-gang-light-switch-cover.html" class="project-link">More Info →</a>
+            </div>
+          </article>
+
+          <!-- COLLECTION ITEM 2 -->
+          <article class="project-card">
+            <div class="project-image">
+              <img src="../assets/images/double-gang-decora-cover.jpg" alt="Double Gang Light Switch Cover, Double Decora render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <span class="family-tag">Project Family · 4 Styles</span>
+              <h3>Double Gang Light Switch Cover</h3>
+              <p class="project-desc">A double-gang switch cover plate in Double Decora, Double Blank, or mixed Decora+blank combinations, each in standard and oversized sizes.</p>
+              <a href="double-gang-light-switch-cover.html" class="project-link">More Info →</a>
+            </div>
+          </article>
+
+          <!-- COLLECTION ITEM 3 -->
+          <article class="project-card">
+            <div class="project-image">
+              <img src="../assets/images/triple-gang-triple-decora-cover.jpg" alt="Triple Gang Light Switch Cover, Triple Decora render" width="800" height="600" loading="lazy">
+            </div>
+            <div class="project-body">
+              <span class="family-tag">Project Family · 11 Styles</span>
+              <h3>Triple Gang Light Switch Cover</h3>
+              <p class="project-desc">A triple-gang switch cover plate covering every practical Decora/blank combination across all three positions, each in standard and oversized sizes.</p>
+              <a href="triple-gang-light-switch-cover.html" class="project-link">More Info →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> The Design Bench. All designs shared here remain the author's own work.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
