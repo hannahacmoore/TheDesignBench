@@ -274,6 +274,25 @@ section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
   object-fit: cover;
 }
 
+/* ---- "Coming soon" card — replaces placeholder cards in categories/slots
+   without real content yet. No fake image or listing links, just a plain
+   on-brand placeholder state. ---- */
+.project-image--soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-image--soon .soon-label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bench-blue-light);
+  opacity: 0.85;
+}
+
 .project-body {
   padding: 1.25rem 1.4rem 1.5rem;
   display: flex;
