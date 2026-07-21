@@ -317,6 +317,39 @@ section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
 
 .project-link:hover { text-decoration: underline; }
 
+/* ---- Card action buttons — for cards/heroes with more than one CTA
+   (View Design + Assembly Instructions + Buy Magnets, etc). Plain
+   stacked text links ran together with nothing to separate them, so
+   these render as distinct pill buttons instead. ---- */
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.card-actions .view-design { margin-top: 0; }
+
+.card-actions .project-link,
+.card-actions .view-design-btn {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(91, 124, 153, 0.1);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.card-actions .project-link:hover,
+.card-actions .view-design-btn:hover {
+  background: rgba(91, 124, 153, 0.2);
+  text-decoration: none;
+}
+
 /* ---- "Project family" tag — for multi-listing projects that link out to
    a dedicated page (see projects/light-switch-family.html) instead of
    opening the platform picker directly. ---- */
