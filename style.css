@@ -633,14 +633,20 @@ section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
   margin-bottom: 0.85rem;
 }
 
-/* The scroll container itself carries the .wrap sizing (max-width + gutter
-   padding) so the row's left edge always lines up with the heading above
-   it, and so it always overflows consistently (guaranteeing the "scroll
-   over" affordance) rather than only overflowing on narrow screens. */
+/* The scroll container itself carries the .wrap sizing (max-width, no
+   horizontal padding here) so the row's left edge always lines up with the
+   heading above it, and so it always overflows consistently (guaranteeing
+   the "scroll over" affordance) rather than only overflowing on narrow
+   screens. The gutter inset itself lives on .row-track below, not here —
+   a container's padding-left isn't reliably included in the scrollable
+   area once its content overflows in every browser, which showed up as
+   rows with more cards (that actually scroll) sitting flush left of rows
+   short enough to never scroll. Padding on the scrollable element itself
+   doesn't have that problem. */
 .row-scroll {
   max-width: var(--wrap-max);
   margin: 0 auto;
-  padding: 0 var(--gutter) 0.6rem;
+  padding: 0 0 0.6rem;
   overflow-x: auto;
   /* Explicit, because leaving overflow-y unset lets browsers silently force
      it to "auto" too (the two axes aren't independent unless both are set)
@@ -677,6 +683,7 @@ section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
   display: flex;
   gap: 1.25rem;
   width: max-content;
+  padding: 0 var(--gutter);
 }
 
 .row-track .project-card {
