@@ -317,15 +317,16 @@ section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
 
 .project-link:hover { text-decoration: underline; }
 
-/* ---- Card action buttons — for cards/heroes with more than one CTA
-   (View Design + Assembly Instructions + Buy Magnets, etc). Plain
-   stacked text links ran together with nothing to separate them, so
-   these render as distinct pill buttons instead. ---- */
+/* ---- Card action buttons — for heroes with more than one CTA (View
+   Design + Assembly Instructions + Buy Magnets, etc). Plain text links
+   in a row ran together with nothing to separate them, so these render
+   as distinct pill buttons instead, wrapping to new lines as needed. ---- */
 .card-actions {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
   margin-top: 0.75rem;
 }
 
