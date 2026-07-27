@@ -351,6 +351,14 @@ section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
   text-decoration: none;
 }
 
+/* Featured Projects cards are wide enough that .card-actions items sit in
+   one row instead of wrapping like they do on the narrower portfolio row
+   cards — stack them here too so both places look the same. */
+.project-grid .card-actions {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 /* ---- "Project family" tag — for multi-listing projects that link out to
    a dedicated page (see projects/light-switch-family.html) instead of
    opening the platform picker directly. ---- */
