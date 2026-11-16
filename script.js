@@ -31,8 +31,8 @@
   // (Cults3D / Printables / MakerWorld / Thangs) so the right one can be
   // picked when a project is posted on more than one.
   //
-  // While open, the menu is moved to a direct child of <body> and switched
-  // to position:fixed with coordinates computed from the button's position.
+  // While open, the menu is moved to a direct child of <body> and positioned
+  // absolutely (page coordinates) from the button's position.
   // Two reasons it has to be this involved rather than plain CSS
   // position:absolute:
   //   1. The portfolio page's rows scroll horizontally (overflow-x:auto),
@@ -72,10 +72,13 @@
       if (!wasOpen) {
         var rect = btn.getBoundingClientRect();
         document.body.appendChild(menu);
-        menu.style.position = 'fixed';
-        var left = Math.min(rect.left, window.innerWidth - menu.offsetWidth - 8);
-        menu.style.top = (rect.bottom + 8) + 'px';
-        menu.style.left = Math.max(8, left) + 'px';
+        // Absolute (page coordinates, not viewport) so the open menu stays
+        // anchored under its button and scrolls with the page like a normal
+        // dropdown, instead of following the screen.
+        menu.style.position = 'absolute';
+        var left = Math.min(rect.left, document.documentElement.clientWidth - menu.offsetWidth - 8);
+        menu.style.top = (rect.bottom + window.scrollY + 8) + 'px';
+        menu.style.left = (Math.max(8, left) + window.scrollX) + 'px';
         menu.classList.add('is-open');
         btn.setAttribute('aria-expanded', 'true');
       }
@@ -83,6 +86,21 @@
   });
 
   document.addEventListener('click', closeAllPickers);
+
+  // Page scrolling is fine (the menu moves with the page), but if a
+  // horizontal card row scrolls underneath it, or the window is resized,
+  // the button moves out from under the menu, so close it then.
+  document.addEventListener('scroll', function (e) {
+    if (e.target !== document) closeAllPickers();
+  }, true);
+  // Width only: phones fire resize when the address bar hides on scroll.
+  var lastWidth = window.innerWidth;
+  window.addEventListener('resize', function () {
+    if (window.innerWidth !== lastWidth) {
+      lastWidth = window.innerWidth;
+      closeAllPickers();
+    }
+  });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeAllPickers();
   });
