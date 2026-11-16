@@ -432,6 +432,24 @@ section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
   color: var(--bench-blue);
 }
 
+/* Section labels inside a grouped picker (e.g. one menu covering several
+   cutout styles that live on separate listings) */
+.platform-menu .menu-group {
+  padding: 0.5rem 0.75rem 0.2rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(32, 36, 42, 0.55);
+}
+
+.platform-menu .menu-group:not(:first-child) {
+  margin-top: 0.3rem;
+  border-top: 1px solid rgba(32, 36, 42, 0.1);
+  padding-top: 0.6rem;
+}
+
 /* ---- "See the Full Portfolio" CTA banner (spans the full grid width) ---- */
 .project-card--cta {
   grid-column: 1 / -1;
