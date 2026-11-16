@@ -435,27 +435,26 @@ section { padding: clamp(3rem, 6vw, 5.5rem) 0; }
 /* Section labels inside a grouped picker (e.g. one menu covering several
    cutout styles that live on separate listings) */
 .platform-menu .menu-group {
-  margin: 0 0 0.2rem;
-  padding: 0.4rem 0.6rem;
-  border-radius: 5px;
-  background: var(--slate-ink);
+  margin: 0 0.4rem 0.15rem;
+  padding: 0.35rem 0.35rem 0.25rem;
+  border-bottom: 1px solid rgba(91, 124, 153, 0.35);
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--paper);
+  color: var(--bench-blue);
   cursor: default;
   user-select: none;
 }
 
 .platform-menu .menu-group:not(:first-child) {
-  margin-top: 0.6rem;
+  margin-top: 0.4rem;
 }
 
-/* Indent the links under each label so the hierarchy reads at a glance */
+/* Tighter, indented links under each label so the hierarchy reads at a glance */
 .platform-menu--grouped li a {
-  padding-left: 1.25rem;
+  padding: 0.3rem 0.75rem 0.3rem 1.1rem;
 }
 
 /* ---- "See the Full Portfolio" CTA banner (spans the full grid width) ---- */
